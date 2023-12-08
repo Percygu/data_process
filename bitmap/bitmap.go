@@ -8,7 +8,7 @@ type BitMap struct {
 func NewBitMap(maxValue uint32) *BitMap {
 	return &BitMap{
 		MaxValue:  maxValue,
-		ByteSlice: make([]byte, (maxValue+7)/8), // +7: 向上取整，不足一个byte，凑齐一个
+		ByteSlice: make([]byte, (maxValue+8)/8), // +7: 向上取整，不足一个byte，凑齐一个
 	}
 }
 
@@ -35,13 +35,3 @@ func (m *BitMap) IsExists(num uint32) bool {
 	b := m.ByteSlice[byteIndex]
 	return (b & (1 << bitIndex)) != 0 // !=0 说明存在，返回true，否则返回false
 }
-
-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
-
-echo "# data_process" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Percygu/data_process.git
-git push -u origin main

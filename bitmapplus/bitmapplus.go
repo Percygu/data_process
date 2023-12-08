@@ -8,7 +8,7 @@ type BitMapPlus struct {
 func NewBitMapPlus(maxValue uint32) *BitMapPlus {
 	return &BitMapPlus{
 		MaxValue:  maxValue,
-		ByteSlice: make([]byte, ((maxValue+1)*2+7)/8),
+		ByteSlice: make([]byte, ((maxValue+1)*2+8)/8),
 	}
 }
 
